@@ -39,7 +39,11 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       });
       return;
     }
-    res.status(200).send("Success")
+    const path = await filterImageFromURL(url);
+    res.status(200).json({
+      path: `file path is: ${path}`
+    })
+    deleteLocalFiles([path]);
   });
   
   // Root Endpoint
