@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import {isUri} from 'valid-url';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
 (async () => {
@@ -30,6 +31,16 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   /**************************************************************************** */
 
   //! END @TODO1
+  app.get("/filteredimage", async ( req, res ) => {
+    const url = req.query.image_url;
+    if (!isUri(url)) {
+      res.status(400).json({
+        message: `Invalid URI: ${url}`
+      });
+      return;
+    }
+    res.status(200).send("Success")
+  });
   
   // Root Endpoint
   // Displays a simple message to the user
