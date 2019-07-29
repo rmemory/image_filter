@@ -11,10 +11,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{HOST}}/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+					"raw": "http://http://imagefilter-env.ekzx5rk3ty.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
 					"protocol": "http",
 					"host": [
-						"{{HOST}}"
+						"http://imagefilter-env.ekzx5rk3ty.us-east-1.elasticbeanstalk.com"
 					],
 					"path": [
 						"filteredimage"
